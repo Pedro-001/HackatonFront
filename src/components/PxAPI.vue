@@ -48,7 +48,8 @@ data(){
         }
       })
       .then(res=>{
-        console.log(res)
+        console.log(res.data.predictions[0].probability)
+        console.log(res.data.predictions[0].tagName)
       })
     }
   }
