@@ -1,0 +1,49 @@
+############################# camara #############################
+
+# LISTAR
+# Obtener una lista de todas las camara s
+GET http://localhost:3000/api/camara 
+# GET
+# Obtener una camara en especifico. La busqueda se hace a travez del id de la camara 
+GET http://localhost:3000/api/camara/2
+
+# CREAR
+# Crear una camara 
+POST http://localhost:3000/api/camara 
+Content-Type: application/json
+
+{
+    "marca": "",
+    "modelo": "",
+    "dia_colocacion": "",
+    "dia_remocion":"",
+    "lalitud":"",
+    "longitud":"",
+    "altitud":"",
+    "vegetacion":"",
+    "collector":""
+}
+
+# UPDATE
+# Actualizar los datos de la camara  La actualizacion se hace a travez del id de la camara 
+PUT http://localhost:3000/api/camara/2
+Content-Type: application/json
+
+{
+    "marca": "",
+    "modelo": "",
+    "dia_colocacion": "",
+    "dia_remocion":"",
+    "lalitud":"",
+    "longitud":"",
+    "altitud":"",
+    "vegetacion":"",
+    "collector":""
+}
+
+# DETELE
+# Eliminar los datos de la camara.  La eliminacion se hace a travez del id de la camara 
+DELETE http://localhost:3000/api/camara/2
+
+
+    

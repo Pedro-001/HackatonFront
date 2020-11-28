@@ -1,0 +1,30 @@
+############################# Localidad #############################
+
+# LISTAR
+# Obtener una lista de todas las localidades
+GET http://localhost:3000/api/localidad
+
+# GET
+# Obtener una localidad en especifico. La busqueda se hace a travez del id de la localidad
+GET http://localhost:3000/api/localidad/2
+
+# CREAR
+# Crear una localidad
+POST localhost:3000/api/localidad/
+Content-Type: application/json
+
+{
+    "nombre":"Aqui va el nombre de la localidad"
+}
+
+# UPDATE
+# Actualizar los datos de la localidad. La actualizacion se hace a travez del id de la localidad
+PUT http://localhost:3000/api/localidad/2
+Content-Type: application/json
+
+{
+    "nombre":"Otro nombre"
+}
+
+# DETELE
+DELETE http://localhost:3000/api/localidad/2
