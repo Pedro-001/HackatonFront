@@ -20,5 +20,12 @@ npm run build
 npm run lint
 ```
 
+
+### MYsql
+```
+mysql -u root -p
+password:
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
