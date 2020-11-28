@@ -21,3 +21,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Servidor
+servidor/dist
+servidor/file
+servidor/node_modules
