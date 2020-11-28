@@ -1,0 +1,36 @@
+############################# estacion #############################
+
+# LISTAR
+# Obtener una lista de todas las estaciones
+GET http://localhost:3000/api/estacion
+
+# GET
+# Obtener una estacion en especifico. La busqueda se hace a travez del id de la estacion
+GET http://localhost:3000/api/estacion/2
+
+# CREAR
+# Crear una estacion
+POST localhost:3000/api/estacion/
+Content-Type: application/json
+
+{
+    "provincia":"Pastaza",
+    "pais":"Ecuador",
+    "notas":"Paraje lagunas",
+    "idLocalidad": 1
+}
+
+# UPDATE
+# Actualizar los datos de la estacion. La actualizacion se hace a travez del id de la estacion
+PUT http://localhost:3000/api/estacion/2
+Content-Type: application/json
+
+{
+    "provincia":"Pastaza",
+    "pais":"Ecuador",
+    "notas":"Paraje lagunas",
+    "idLocalidad": 1
+}
+
+# DETELE
+DELETE http://localhost:3000/api/estacion/2
