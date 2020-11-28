@@ -1,6 +1,7 @@
 <template>
   <div>
-    <PxAPI />
+    <PxAPI  />
+
   </div>
 </template>
 
@@ -8,7 +9,14 @@
 import PxAPI from "@/components/PxAPI";
 
 export default {
-  name: "Api",
-  components: { PxAPI }
-};
+  name: 'api',
+  components: { PxAPI },
+  
+ }
 </script>
+
+
+change evento al input seleccionar archivo
+
+
+
