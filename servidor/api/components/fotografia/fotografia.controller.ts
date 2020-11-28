@@ -20,7 +20,7 @@ async function insert(idCamara:any, fotos:any[]) {
     
     for (let i = 0; i < fotos.length; i++) {
         const foto = fotos[i];
-        let path = String(foto['path']);
+        let path = String(foto['filename']);
         path = path.replace(/\\/, "/");
         data.push([
             null,
