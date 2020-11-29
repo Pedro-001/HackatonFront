@@ -12,15 +12,23 @@
     >Volver a la pagina de Inicio</router-link>-->
   </div>
   
-      <div >
-    <img src="../assets/img/1.png" alt="">
-    <img src="../assets/img/2.png" alt="">
-    <img src="../assets/img/3.png" alt="">
-    <img src="../assets/img/4.png" alt="">
-    <img src="../assets/img/5.png" alt="">
-      </div>
+ 
 
   
+
+  
+
+<div><px-nosotros /></div>
 
   
 </template>
+
+<script>
+
+import PxNosotros from "@/components/PxNosotros";
+
+export default {
+  name: "Nosotros",
+  components: {PxNosotros }
+};
+</script>
