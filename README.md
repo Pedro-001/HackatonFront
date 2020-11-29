@@ -31,8 +31,6 @@ password:
 ```
  npx tsc
 
-
-
 ### /servidor/distr 
 ```
 node index.js
