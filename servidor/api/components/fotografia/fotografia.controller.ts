@@ -41,13 +41,17 @@ function drop(id: number) {
   return store.drop(TABLA, id);
 }
 
+function query(queryUser:any) {
+  return store.query(TABLA, queryUser, null)
+}
+
 async function onUpload(fileName: any) {
   const image = await fs.readFile(path.join("dist","files", fileName));
     
 //   const formData = new FormData();
 //   formData.append("image", image, image.name);
   return axios.post(
-    "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/0cfacc40-5db4-468e-aa75-ce5c9e5b078c/detect/iterations/Hackathon%20modelo%201/image",
+    "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/7c6e16e4-7de3-40f4-baf5-24a29889d9b3/classify/iterations/MODELO%202024/image",
     image,
     {
       headers: {
@@ -63,4 +67,5 @@ export default {
   insert,
   drop,
   update,
+  query
 };

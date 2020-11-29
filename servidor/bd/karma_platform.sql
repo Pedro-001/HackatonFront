@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2020 a las 18:03:26
+-- Tiempo de generación: 29-11-2020 a las 05:44:10
 -- Versión del servidor: 10.4.16-MariaDB
 -- Versión de PHP: 7.4.12
 
@@ -79,20 +79,24 @@ INSERT INTO `estacion` (`id`, `provincia`, `pais`, `notas`, `idLocalidad`) VALUE
 CREATE TABLE `fotografia` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `idCamara` int(11) NOT NULL
+  `idCamara` int(11) NOT NULL,
+  `especie` varchar(50) NOT NULL DEFAULT 'Sin analizar',
+  `probabilidad` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `fotografia`
 --
 
-INSERT INTO `fotografia` (`id`, `path`, `idCamara`) VALUES
-(16, 'files/4a8562b83be63d8fc5938a4987a8ad48', 1),
-(17, 'files/0775f9ecbea38e34c1905173d4a84cd6', 1),
-(18, 'files/d1d9b29f053dce30d4fb8d7f40bb8730', 1),
-(19, 'files/dc942794ed74207c697b4b2cf29e9cc6', 1),
-(20, 'files/e2d9cbe5028928a429d645349097d915', 1),
-(21, 'files/a920f05b6a6f50885299111fee77aebc', 1);
+INSERT INTO `fotografia` (`id`, `path`, `idCamara`, `especie`, `probabilidad`) VALUES
+(100, '1606607519169Puma_6.png', 1, 'Puma', 0.552735),
+(101, '1606607657099Puma_6.png', 1, 'Puma', 0.552735),
+(102, '1606607769598Ocelot_(Jaguatirica)_Zoo_Itatiba.jpg', 1, 'Ocelote', 0.0744139),
+(103, '1606607769599Puma_6.png', 1, 'Puma', 0.552735),
+(104, '1606611593434Ocelot_(Jaguatirica)_Zoo_Itatiba.jpg', 1, 'Ocelote', 0.0744139),
+(105, '1606611593436Puma_6.png', 1, 'Puma', 0.552735),
+(106, '1606611624388Ocelot_(Jaguatirica)_Zoo_Itatiba.jpg', 1, 'Ocelote', 0.0744139),
+(107, '1606611624390Puma_6.png', 1, 'Puma', 0.552735);
 
 -- --------------------------------------------------------
 
@@ -111,6 +115,19 @@ CREATE TABLE `localidad` (
 
 INSERT INTO `localidad` (`id`, `nombre`) VALUES
 (1, 'Comunidad Achuar de Wachirpas Amazonas Ecuatoriano');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `resultado_analisis`
+--
+
+CREATE TABLE `resultado_analisis` (
+  `id` int(11) NOT NULL,
+  `idFotografia` int(11) NOT NULL,
+  `analisado` tinyint(1) NOT NULL DEFAULT 0,
+  `especie` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
@@ -143,6 +160,13 @@ ALTER TABLE `localidad`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `resultado_analisis`
+--
+ALTER TABLE `resultado_analisis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idFotografia` (`idFotografia`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -162,13 +186,19 @@ ALTER TABLE `estacion`
 -- AUTO_INCREMENT de la tabla `fotografia`
 --
 ALTER TABLE `fotografia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT de la tabla `localidad`
 --
 ALTER TABLE `localidad`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `resultado_analisis`
+--
+ALTER TABLE `resultado_analisis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -185,6 +215,12 @@ ALTER TABLE `estacion`
 --
 ALTER TABLE `fotografia`
   ADD CONSTRAINT `fotografia_ibfk_1` FOREIGN KEY (`idCamara`) REFERENCES `camara` (`id`);
+
+--
+-- Filtros para la tabla `resultado_analisis`
+--
+ALTER TABLE `resultado_analisis`
+  ADD CONSTRAINT `resultado_analisis_ibfk_1` FOREIGN KEY (`idFotografia`) REFERENCES `fotografia` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
