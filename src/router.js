@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
 import Api from '@/views/Api.vue';
 import Error from '@/views/Error.vue';
+import Login from '@/views/Login.vue';
 
 const history = createWebHistory();
 
@@ -28,6 +29,11 @@ const router = createRouter({
         path: '/api',
         name: 'API',
         component: Api,
+      },
+      {
+        path: '/log',
+        name: 'Login',
+        component: Login,
       }
     ]
   
