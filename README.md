@@ -27,5 +27,13 @@ mysql -u root -p
 password:
 ```
 
+### /servidor correr
+```
+ npx tsc
+
+### /servidor/distr 
+```
+node index.js
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
