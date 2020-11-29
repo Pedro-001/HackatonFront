@@ -1,6 +1,6 @@
 <template>
   <div class="flex-col items-center content-center">
-      <h1 class="text-gray-700 text-2xl uppercase">Ingresa  una localidad </h1>            
+      <h1 class="text-gray-700 text-2xl uppercase">Ingresa  una estacion </h1>            
             <form @submit="PostEstaciones" method="post">
             
                 <input type="text" name="provincia" placeholder="Nombre provincia" v-model="Provinciaposts.provincia"> <br><br>

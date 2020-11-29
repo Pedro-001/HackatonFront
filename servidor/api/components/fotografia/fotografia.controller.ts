@@ -46,6 +46,8 @@ function query(queryUser:any) {
 }
 
 async function onUpload(fileName: any) {
+
+  console.log(JSON.stringify(fileName));
   const image = await fs.readFile(path.join("dist","files", fileName));
     
 //   const formData = new FormData();
