@@ -26,10 +26,17 @@ router.delete('/:id', drop)
 
 // Funciones
 async function list(req:Request, res:Response, next: NextFunction) {
-    
+     
     try {
-        const data = await controller.list()
+        const {especie} = req.query;
+        let data = null;
+        if (especie) {
+            data = await controller.query({especie})
+        } else{
+            data = await controller.list()
+        }
         respuesta.success(req, res, data, 200)
+
     } catch (error) {
         respuesta.error(req, res, error, 500);
     }

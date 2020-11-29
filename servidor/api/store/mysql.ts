@@ -103,7 +103,7 @@ function query(table:any, query:any, join:any) {
     return new Promise((resolve, reject) => {
         connection.query(`SELECT * FROM ${table} ${joinQuery} WHERE ${table}.?`, query, (err, res) => {
             if (err) return reject(err);
-            resolve(res[0] || null);
+            resolve(res || null);
         })
     })
 }
