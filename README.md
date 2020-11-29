@@ -19,13 +19,22 @@ npm run build
 ```
 npm run lint
 ```
-
-
 ### MYsql
 ```
 mysql -u root -p
 password:
 ```
+
+### /servidor correr
+```
+ npx tsc
+```
+
+### /servidor/dist correr
+```
+ node index.js
+```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
