@@ -57,12 +57,11 @@ async function insert(req:Request, res:Response, next: NextFunction) {
     try {
 
         const {idCamara}:any = req.body;
-        let files = req.files;
-        console.log(files);
+        let files =  <Array<any>> req.files;
         
         const data = await controller.insert(idCamara, files);
-        console.log(files); 
         
+
 
         respuesta.success(req, res, data, 200)
             
