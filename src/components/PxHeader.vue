@@ -14,7 +14,7 @@
   </header>-->
   <header>
    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#"><img src="../assets/img/icono_nav.png" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="" style="width:130px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
