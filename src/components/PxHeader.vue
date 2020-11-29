@@ -25,7 +25,7 @@
             <router-link class="nav-link" to="/" >Inicio <span class="sr-only">(current)</span></router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link class="nav-link" to="/log" >Iniciar Sesión </router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
