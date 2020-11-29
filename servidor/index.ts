@@ -1,6 +1,7 @@
 import express from "express";
 import main_router from "./api/routes";
 import path from "path";
+import cors from 'cors';
 
 const app = express();
 const router = express.Router();
@@ -13,6 +14,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // CORS
+app.use(cors())
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
 
