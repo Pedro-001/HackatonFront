@@ -172,6 +172,15 @@
 
  son el jaguar, el ocelote, el tigrillo, el puma, el lince y el yaguarundí.
         </p>
+          <div>
+            <marquee behavior="scroll" direction="up" scrollamount="1"><img src="../assets/img/animal6.png" alt=""></marquee>
+
+<marquee behavior="scroll" direction="right" scrollamount="12"><img src="../assets/img/animal7.png" alt=""></marquee>
+
+<marquee behavior="scroll" direction="left" scrollamount="20"><img src="../assets/img/animal8.png" alt=""></marquee>
+
+<marquee behavior="scroll" direction="right" scrollamount="40"><img src="../assets/img/animal9.png" alt=""></marquee>
+        </div>
       </div>
       <div class="col-md-5">
        <img src="https://www.animalkarma.org.mx/theme/img/bg55-2.png"  style="width:20rem;" alt="">
@@ -184,7 +193,7 @@
   </div>
   <!-- /.container -->
 
-
+          
 
 </template>
 
