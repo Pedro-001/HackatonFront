@@ -7,7 +7,8 @@ import Fotografia from './fotografia.interface'
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '..', '..', '..', 'files'))
+        // cb(null, path.join(__dirname, '..', '..', '..', 'files'))
+        cb(null, path.join(__dirname, 'files'))
     },
     filename: (req, file, cb) => {
         cb(null, new Date().getTime() + file.originalname)

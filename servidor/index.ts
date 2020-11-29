@@ -31,7 +31,9 @@ app.use((req, res, next) => {
 });
 
 // Archivos estaticos
-app.use('/static', express.static(path.join(__dirname, 'files')));
+console.log(path.join(__dirname, 'api','componentes', 'fotografia', 'files'));
+
+app.use('/static', express.static(path.join(__dirname, 'api','components', 'fotografia', 'files')));
 
 // Rutas
 app.use('/api', main_router);
