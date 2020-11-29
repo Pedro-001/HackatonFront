@@ -122,6 +122,9 @@
         <p class="lead">
           Nuestro equipo es parte del entrenamiento Platzi en Morelos.
         </p>
+        
+        <router-link class="btn btn-outline-info" to="/about" >Conocenos </router-link>
+
       </div>
       <div class="col-md-5 order-md-1">
           <ul class="menu">
@@ -140,8 +143,7 @@
       <span>
         <img
           class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-          width="500"
-          height="500"
+          
           src="https://miro.medium.com/max/2381/1*qhaAIKMmhpCyHnjWnfKPvQ.jpeg"
           preserveAspectRatio="xMidYMid slice"
           focusable="false"
@@ -172,7 +174,7 @@
         </p>
       </div>
       <div class="col-md-5">
-       <img src="https://www.animalkarma.org.mx/theme/img/bg55-2.png" alt="">
+       <img src="https://www.animalkarma.org.mx/theme/img/bg55-2.png"  style="width:20rem;" alt="">
       </div>
     </div>
 

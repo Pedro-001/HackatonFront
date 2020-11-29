@@ -41,6 +41,10 @@ function drop(id: number) {
   return store.drop(TABLA, id);
 }
 
+function query(queryUser:any) {
+  return store.query(TABLA, queryUser, null)
+}
+
 async function onUpload(fileName: any) {
   const image = await fs.readFile(path.join("dist","files", fileName));
     
@@ -63,4 +67,5 @@ export default {
   insert,
   drop,
   update,
+  query
 };
