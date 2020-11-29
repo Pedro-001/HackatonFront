@@ -11,11 +11,16 @@
       class="mt-5 text-xl text-green-600 hover:underline"
     >Volver a la pagina de Inicio</router-link>-->
   </div>
-  <div>
+  
+      <div >
     <img src="../assets/img/1.png" alt="">
     <img src="../assets/img/2.png" alt="">
     <img src="../assets/img/3.png" alt="">
     <img src="../assets/img/4.png" alt="">
     <img src="../assets/img/5.png" alt="">
-  </div>
+      </div>
+
+  
+
+  
 </template>
