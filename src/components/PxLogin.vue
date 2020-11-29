@@ -62,7 +62,7 @@
 							<img src="https://www.animalkarma.org.mx/theme/img_m/m1.png" alt="">
 							<h1>Hola Amig&#64;!</h1>
 							<p>Ingresa unos cuantos datos y unete</p>
-							<button class="ghost" id="signUp" v-on:click="sign_up">Registrarse</button>
+						<!--	<button class="ghost" id="signUp" v-on:click="sign_up">Registrarse</button>-->
 						</div>
 					</div>
 				</div>
