@@ -1,10 +1,19 @@
 import { Router, Request, Response, NextFunction } from 'express'
+import path from 'path';
 import multer from "multer";
 import respuesta from "../../response";
 import controller from './fotografia.controller';
 import Fotografia from './fotografia.interface'
 
-const upload = multer({ dest: 'files/'})
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '..', '..', '..', 'files'))
+    },
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + file.originalname)
+    }
+})
+const upload = multer({storage})
 
 const router = Router();
 
@@ -31,7 +40,6 @@ async function get(req:Request, res:Response, next: NextFunction) {
     
     try {
         let { id } = req.params;
-        console.log(req);
         
         const idNumber = Number.parseInt(id)
 
@@ -49,9 +57,10 @@ async function insert(req:Request, res:Response, next: NextFunction) {
     try {
 
         const {idCamara}:any = req.body;
-        let files = req.files;
+        let files =  <Array<any>> req.files;
         
         const data = await controller.insert(idCamara, files);
+        
 
 
         respuesta.success(req, res, data, 200)
