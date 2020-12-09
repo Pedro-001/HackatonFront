@@ -29,11 +29,17 @@ router.delete('/:id', drop)
 async function list(req:Request, res:Response, next: NextFunction) {
      
     try {
-        const {especie} = req.query;
+        const query = req.query;
+
         let data = null;
-        if (especie) {
-            data = await controller.query({especie})
+        console.log(query);
+        
+        if (query.especie || query.idCamara) {
+            console.log('lleno');
+            data = await controller.query(query)
         } else{
+            console.log('vacio');
+            
             data = await controller.list()
         }
         respuesta.success(req, res, data, 200)
