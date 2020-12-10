@@ -24,9 +24,11 @@ async function insert(idCamara: any, fotos: any[]) {
     let path = String(foto["filename"]);
     path = path.replace(/\\/, "/");
 
-    // const prediccion = await onUpload(foto["filename"])
-    // const { tagName, probability } = prediccion['data']['predictions'][0];
-    const tagName='jaguar', probability=90 ;
+    const prediccion = await onUpload(foto["filename"])
+    let { tagName, probability } = prediccion['data']['predictions'][0];
+    if (probability < .8) {
+      tagName = 'sin resultado';
+    }
 
     data.push([null, path, Number.parseInt(idCamara), tagName, probability]);
   }
@@ -54,11 +56,11 @@ async function onUpload(fileName: any) {
 //   const formData = new FormData();
 //   formData.append("image", image, image.name);
   return axios.post(
-    "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/7c6e16e4-7de3-40f4-baf5-24a29889d9b3/classify/iterations/MODELO%202024/image",
+    "https://northcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/eaa0d30d-1694-4328-a6ee-0aadae74d795/classify/iterations/Modelo%202024/image",
     image,
     {
       headers: {
-        "Prediction-Key": "d5255a630d514403811ceab4988dcc4f",
+        "Prediction-Key": "db5a1c510c634625918c1d3d892c7ded",
         "Content-Type": "application/octet-stream",
       },
     }
